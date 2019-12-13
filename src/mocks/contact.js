@@ -1,4 +1,4 @@
-// import wepy from 'wepy'
+import wepy from 'wepy'
 
 let users = [
     {id: 'caixia', name: '彩霞'},
@@ -35,12 +35,12 @@ let users = [
 
 users = users.sort((a, b) => a.id.charCodeAt(0) - b.id.charCodeAt(0))
 
-// let table = users.map(i => {
-//     return {
-//         name: i.name,
-//         id: i.id,
-//         icon:
-//     }
-// })
+let table = users.map(i => {
+    return {
+        name: i.name,
+        id: i.id,
+        icon: wepy.env === 'web' ? `./mocks/users/${i.id}.png` : `./../mocks/users/${i.id}.png`
+    }
+})
 
-console.log('users:', users)
+export default table
